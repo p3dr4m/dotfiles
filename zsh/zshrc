@@ -1,3 +1,18 @@
+# Execute directory names as cd command to that directory
+setopt AUTO_CD
+
+# Make cd push the old diretory onto the directory stack (as if pushd)
+setopt AUTO_PUSHD
+
+# Don't push multiple copies of the same directory onto the directory stack
+setopt PUSHD_IGNORE_DUPS
+
+unsetopt beep
+zstyle :compinstall filename '~/.zshrc'
+autoload -Uz compinit; compinit
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+source ./prompt.sh
+
 # History
 SAVEHIST=10000
 HISTSIZE=10000
