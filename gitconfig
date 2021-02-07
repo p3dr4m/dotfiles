@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[color]
+	ui = true
+[user]
+	name = p3dr4m
+	email = p3dr4m@hotmail.com
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	lg = log --pretty=format:'[%h] [%ad] %s'
+	graph = log --pretty=format:'%h %Cgreen %an: %Creset %s' --graph
+	w = whatchanged
+	diffc = diff --cached
+	last = log -1 HEAD
+	unstage = reset HEAD --
+[core]
+	excludesfile = ~/.gitignore_global
+[push]
+	default = simple
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
