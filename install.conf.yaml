@@ -5,9 +5,15 @@
 - clean: ['~']
 
 - link:
-    ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
+    ~/.vimrc:
+      path: vim/vimrc
+      force: true
+    ~/.gitconfig:
+      path: git/gitconfig
+      force: true
+    ~/.gitignore_global:
+      path: git/gitignore_global
+      force: true
 
 - create:
     - ~/downloads
