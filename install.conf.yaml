@@ -5,14 +5,12 @@
 - clean: ['~']
 
 - link:
-    ~/.vimrc:
-      path: vimrc
-    ~/.gitconfig:
-      path: gitconfig
-    ~/.gitignore_global:
-      path: gitignore_global
+    ~/.vimrc: vimrc
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
     ~/.oh-my-zsh: zsh/ohmyzsh/
     ~/.zshrc: zshrc
+
 - create:
     - ~/Projects
 
