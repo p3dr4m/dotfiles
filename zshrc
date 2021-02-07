@@ -13,10 +13,10 @@ autoload -Uz compinit; compinit
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Zsh configurations
-export ZSH=$HOME/dotfiles/zsh/ohmyzsh
-export ZSH_CUSTOM=$HOME/dotfiles/zsh/plugins
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(rbenv git osx z zsh-autosuggestions thefuck pyenv zsh-syntax-highlighting)
+export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
+export ZSH_CUSTOM=$HOME/Dotfiles/zsh/plugins
+ZSH_THEME="robbyrussel"
+plugins=(rbenv git osx zsh-completions pyenv zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # History
