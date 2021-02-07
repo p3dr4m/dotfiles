@@ -7,17 +7,18 @@
 - link:
     ~/.vimrc:
       path: vim/vimrc
-      force: true
     ~/.gitconfig:
       path: git/gitconfig
-      force: true
     ~/.gitignore_global:
       path: git/gitignore_global
-      force: true
 
 - create:
-    - ~/downloads
-    - ~/.vim/undo-history
+    - ~/Projects
+
+- defaults:
+    link:
+      create: true
+      relink: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
