@@ -12,6 +12,13 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit; compinit
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Zsh configurations
+export ZSH=$HOME/dotfiles/zsh/ohmyzsh
+export ZSH_CUSTOM=$HOME/dotfiles/zsh/plugins
+ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(rbenv git osx z zsh-autosuggestions thefuck pyenv zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+
 # History
 SAVEHIST=10000
 HISTSIZE=10000
