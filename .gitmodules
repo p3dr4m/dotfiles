@@ -8,6 +8,9 @@
 [submodule "ohmyzsh/custom/plugins/zsh-completions"]
 	path = ohmyzsh/custom/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "oh-my-zsh/custom/plugins/zsh-completions"]
+	path = oh-my-zsh/custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
 [submodule "ohmyzsh/custom/plugins/zsh-syntax-highlighting"]
 	path = ohmyzsh/custom/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
