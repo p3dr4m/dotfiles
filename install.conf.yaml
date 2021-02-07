@@ -10,6 +10,7 @@
     ~/.gitignore_global: gitignore_global
     ~/.oh-my-zsh: zsh/ohmyzsh/
     ~/.zshrc: zshrc
+    ~/.p10k.zsh: p10k.zsh
 
 - create:
     - ~/Projects
