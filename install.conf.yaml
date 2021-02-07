@@ -12,7 +12,7 @@
     ~/.gitignore_global:
       path: gitignore_global
     ~/.oh-my-zsh: zsh/ohmyzsh/
-
+    ~/.zshrc: zshrc
 - create:
     - ~/Projects
 
