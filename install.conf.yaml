@@ -4,6 +4,9 @@
 
 - clean: ['~']
 
+- shell:
+  - [sh pre-setup.sh, Running pre-setup script]
+
 - link:
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
@@ -21,4 +24,5 @@
       relink: true
 
 - shell:
+  - [sh fonts/install.sh, Installing Powerline fonts]
   - [git submodule update --init --recursive, Installing submodules]
