@@ -1,11 +1,4 @@
-- defaults:
-    link:
-      relink: true
-
 - clean: ['~']
-
-- shell:
-  - [sh pre-setup.sh, Running pre-setup script]
 
 - link:
     ~/.vimrc: vimrc
@@ -24,5 +17,6 @@
       relink: true
 
 - shell:
+  - [sh pre-setup.sh, Running pre-setup script]
   - [sh fonts/install.sh, Installing Powerline fonts]
   - [git submodule update --init --recursive, Installing submodules]
