@@ -9,10 +9,8 @@
 - shell:
   - [sh pre-setup.sh, Running pre-setup script]
 
-- brewfile:
-    - Brewfile
-
 - link:
+    ~/.profile: profile
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
@@ -20,9 +18,11 @@
     ~/.zshrc: zshrc
     ~/.p10k.zsh: p10k.zsh
 
+- brewfile:
+    - Brewfile
+
 - create:
     - ~/Projects
-
 
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
