@@ -1,5 +1,11 @@
 - clean: ['~']
 
+- shell:
+  - [sh pre-setup.sh, Running pre-setup script]
+
+- brewfile:
+    - Brewfile
+
 - link:
     ~/.vimrc: vimrc
     ~/.gitconfig: gitconfig
@@ -17,6 +23,5 @@
       relink: true
 
 - shell:
-  - [sh pre-setup.sh, Running pre-setup script]
   - [sh fonts/install.sh, Installing Powerline fonts]
   - [git submodule update --init --recursive, Installing submodules]

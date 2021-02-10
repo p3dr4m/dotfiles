@@ -10,17 +10,6 @@ default_shell () {
   fi
 }
 
-install_mac_cli() {
-  # Check if Mac-CLI is installed
-  if [ ! -f "which mac" ]; then
-    echo 'Installing Mac-CLI'
-    /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
-  else
-    echo 'Updating Mac-CLI'
-    /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/update)"
-  fi
-}
-
 install_homebrew() {
   # Check if Homebrew is installed
   if [ ! -f "`which brew`" ]; then
