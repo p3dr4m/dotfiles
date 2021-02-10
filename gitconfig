@@ -18,6 +18,8 @@
 	excludesfile = ~/.gitignore_global
 [push]
 	default = simple
+[pull]
+	rebase = false
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean %f
