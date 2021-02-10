@@ -1,6 +1,8 @@
 - defaults:
     link:
+      create: true
       relink: true
+      force: true
 
 - clean: ['~']
 
@@ -18,11 +20,7 @@
 - create:
     - ~/Projects
 
-- defaults:
-    link:
-      create: true
-      relink: true
 
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
-  - [git submodule update --init --recursive, Installing submodules]
+  - [git submodule update --init --recursive, Installing submodules
