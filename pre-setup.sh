@@ -2,7 +2,7 @@
 
 default_shell () {
   # Change default shell
-  if [ ! $SHELL = "/bin/zsh" ]; then
+  if [ ! "$SHELL" = "/bin/zsh" ]; then
     echo 'Changing default shell to zsh'
     chsh -s /bin/zsh
   else
@@ -12,7 +12,7 @@ default_shell () {
 
 install_homebrew() {
   # Check if Homebrew is installed
-  if [ ! -f "`which brew`" ]; then
+  if [ ! -f "$(which brew)" ]; then
     echo 'Installing homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
@@ -22,20 +22,28 @@ install_homebrew() {
   brew tap homebrew/bundle  # Install Homebrew Bundle
 }
 
-if [ "$(uname)" = "Darwin" ]; then
-  # Do something under Mac OS X platform
-  default_shell
-  install_homebrew
-elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-  # Do something under GNU/Linux platform
-  echo
-elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW32_NT" ]; then
-  # Do something under 32 bits Windows NT platform
-  echo
-elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW64_NT" ]; then
-  # Do something under 64 bits Windows NT platform
-  echo
-fi
+case "$(uname -s)" in
+
+   Darwin)
+      echo 'Mac OS X'
+      default_shell
+      install_homebrew
+      ;;
+
+   Linux)
+      echo 'Linux'
+      default_shell
+      install_homebrew
+      ;;
+
+   CYGWIN*|MINGW32*|MSYS*|MINGW*)
+      echo 'MS Windows'
+      ;;
+   *)
+     echo 'Other OS' 
+     ;;
+esac
+
 
 
 
