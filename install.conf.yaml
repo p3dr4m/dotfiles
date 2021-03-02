@@ -64,4 +64,4 @@
 
 - shell:
   - [sh fonts/install.sh, Installing Powerline fonts]
-  - [git submodule update --init --recursive --progress --depth 1 , Installing submodules]
+  - [git submodule update --init --recursive --progress, Installing submodules]
