@@ -63,6 +63,5 @@
     - ~/Projects
 
 - shell:
-  - [sh pre-setup.sh, Running pre-setup script]
   - [sh fonts/install.sh, Installing Powerline fonts]
   - [git submodule update --init --recursive, Installing submodules]
