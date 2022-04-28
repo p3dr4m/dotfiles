@@ -1,10 +1,3 @@
 Host *
   AddKeysToAgent yes
 	IdentityFile ~/.ssh/pedram
-  # PermitLocalCommand yes
-#  LocalCommand ssh -o PermitLocalCommand=no %n "which git >/dev/null && ([[ -d ~/Dotfiles ]] && (echo "Updating Dotfiles on %h ..." && cd ~/Dotfiles && git pull -q && ./install >/dev/null) || (echo "Installing Dotfiles on %h ..." && git clone -q https://github.com/p3dr4m/Dotfiles && ./Dotfiles/install >/dev/null))"
-
-Host nazsvr
-  HostName nazsvr
-  User root
-  ForwardAgent yes

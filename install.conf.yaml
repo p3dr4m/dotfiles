@@ -16,49 +16,6 @@
     ~/.p10k.zsh: p10k.zsh
     ~/.ssh/config: config
 
-      #- tap:
-      #    - homebrew/bundle
-      #    - homebrew/cask
-      #    - homebrew/cask-fonts
-      #    - homebrew/cask-versions
-      #    - homebrew/core
-      #    - homebrew/services
-      #
-      #- brew:
-      #    - zsh
-      #    - svn
-      #    - awscli
-      #    - bash
-      #    - coreutils
-      #    - gh
-      #    - git
-      #    - gnupg2
-      #    - grep
-      #    - httpie
-      #    - mas
-      #    - pkg-config
-      #    - tree
-      #    - imagemagick
-      #    - yarn
-      #    - nvm
-      #    - jpegoptim
-      #
-      #- cask:
-      #    - font-lato
-      #    - font-open-sans
-      #    - font-roboto
-      #    - font-source-code-pro-for-powerline
-      #    - font-source-code-pro
-      #    - font-source-sans-pro
-      #    - font-source-serif-pro
-      #    - discord
-      #    - vlc
-      #    - skype
-      #    - slack
-      #    - google-chrome
-      #    - firefox
-      #    - figma
-
 - create:
     - ~/Projects
 
