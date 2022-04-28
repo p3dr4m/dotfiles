@@ -56,7 +56,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
 export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(rbenv git osx zsh-completions zsh-autosuggestions history-substring-search pyenv zsh-syntax-highlighting)
+plugins=(git osx zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 source $ZSH/oh-my-zsh.sh
 
@@ -92,13 +92,8 @@ alias toupper="tr '[:lower:]' '[:upper:]'"
 alias tolower="tr '[:upper:]' '[:lower:]'"
 alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
-
+# NVS
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
