@@ -9,6 +9,9 @@ insert_final_newline = true
 max_line_length = 80
 trim_trailing_whitespace = true
 
+[*.{cs,sql,config,csx,fsx}]
+charset = utf-8-bom
+
 [*.md]
 max_line_length = 0
 trim_trailing_whitespace = false
