@@ -56,7 +56,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
 export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git osx zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
+plugins=(git macos zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
 source $ZSH/oh-my-zsh.sh
 
