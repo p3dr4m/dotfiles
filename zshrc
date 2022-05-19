@@ -50,7 +50,9 @@ setopt PUSHD_IGNORE_DUPS
 unsetopt beep
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit; compinit
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+path+=/usr/local/bin
+path+=/bin
+path+=$PWD/.local/bin
 
 # Zsh configurations
 export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
