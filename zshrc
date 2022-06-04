@@ -50,17 +50,11 @@ setopt PUSHD_IGNORE_DUPS
 unsetopt beep
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit; compinit
-path+=/usr/local/bin
-path+=/bin
-path+=$PWD/.local/bin
 
 # Zsh configurations
-export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
-export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git macos zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
+plugins=(git macos zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting docker)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
-source $ZSH/oh-my-zsh.sh
 
 # History
 SAVEHIST=10000
@@ -84,7 +78,7 @@ alias brew='arch -x86_64 /usr/local/bin/brew'
 alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
 
 # Refreshments
-alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias reload="source ~/.zshrc &> /dev/null && echo 'ZSH config reloaded from ~/.zshrc'"
 alias ez="vim ~/.zshrc && reload"
 alias ev="vim ~/.vim/vimrc"
 
@@ -94,8 +88,18 @@ alias toupper="tr '[:lower:]' '[:upper:]'"
 alias tolower="tr '[:upper:]' '[:lower:]'"
 alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
 
-# NVS
-export NVS_HOME="$HOME/.nvs"
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+
+export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
+export VOLTA_HOME="$HOME/.volta"
+export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
+path+=/usr/local/bin
+path+=/bin
+path+=$HOME/.local/bin
+path+=$HOME/.ebcli-virtual-env/executables
+path+=$HOME/Dotfiles/zsh/ohmyzsh
+path+=$HOME/.volta/bin
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#:source $ZSH/oh-my-zsh.sh &> /dev/null
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
