@@ -5,67 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Execute directory names as cd command to that directory
-setopt AUTO_CD
-
-# Make cd push the old diretory onto the directory stack (as if pushd)
-setopt AUTO_PUSHD
-
-# Don't push multiple copies of the same directory onto the directory stack
-setopt PUSHD_IGNORE_DUPS
-
-unsetopt beep
-zstyle :compinstall filename '~/.zshrc'
-autoload -Uz compinit; compinit
-
-# Zsh configurations
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git macos zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting docker)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
-
-# History
-SAVEHIST=10000
-HISTSIZE=10000
-HISTFILE=~/.zsh_history
-setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt NO_HIST_BEEP
-setopt SHARE_HISTORY
-setopt RM_STAR_WAIT
-setopt NO_CLOBBER
-
-# Alias
-
-# Brew
-alias brew='arch -x86_64 /usr/local/bin/brew'
-alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
-
-# Refreshments
-alias reload="source ~/.zshrc &> /dev/null && echo 'ZSH config reloaded from ~/.zshrc'"
-alias ez="vim ~/.zshrc && reload"
-alias ev="vim ~/.vim/vimrc"
-
-# Helpers
-alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
-alias toupper="tr '[:lower:]' '[:upper:]'"
-alias tolower="tr '[:upper:]' '[:lower:]'"
-alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
-
-
-export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
-export VOLTA_HOME="$HOME/.volta"
-export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
-path+=/usr/local/bin
-path+=/bin
-path+=$HOME/.local/bin
-path+=$HOME/.ebcli-virtual-env/executables
-path+=$HOME/Dotfiles/zsh/ohmyzsh
-path+=$HOME/.volta/bin
-
 function extract {
  if [ -z "$1" ]; then
     # display usage if no parameters given
@@ -98,6 +37,72 @@ function extract {
 fi
 }
 
+# Execute directory names as cd command to that directory
+setopt AUTO_CD
+
+# Make cd push the old diretory onto the directory stack (as if pushd)
+setopt AUTO_PUSHD
+
+# Don't push multiple copies of the same directory onto the directory stack
+setopt PUSHD_IGNORE_DUPS
+
+unsetopt beep
+zstyle :compinstall filename '~/.zshrc'
+autoload -Uz compinit; compinit
+
+# Zsh configurations
+ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(git macos zsh-completions zsh-autosuggestions history-substring-search zsh-syntax-highlighting)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
+
+# History
+SAVEHIST=10000
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt NO_HIST_BEEP
+setopt SHARE_HISTORY
+setopt RM_STAR_WAIT
+setopt NO_CLOBBER
+
+# Alias
+
+# Brew
+alias brew='arch -x86_64 /usr/local/bin/brew'
+alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
+
+# Refreshments
+alias reload="source ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias ez="vim ~/.zshrc && reload"
+alias ev="vim ~/.vim/vimrc"
+
+# Helpers
+alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
+alias toupper="tr '[:lower:]' '[:upper:]'"
+alias tolower="tr '[:upper:]' '[:lower:]'"
+alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
+
+
+export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
+export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
+path+=/usr/local/bin
+path+=/bin
+path+=$HOME/.local/bin
+path+=$HOME/.ebcli-virtual-env/executables
+path+=$HOME/Dotfiles/zsh/ohmyzsh
+path+=$HOME/.volta/bin
+
+# pnpm
+export PNPM_HOME="/home/pedram/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#:source $ZSH/oh-my-zsh.sh &> /dev/null
+source $ZSH/oh-my-zsh.sh &> /dev/null
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
