@@ -57,14 +57,11 @@ alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
 
 
 export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
-export VOLTA_HOME="$HOME/.volta"
 export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
 path+=/usr/local/bin
 path+=/bin
 path+=$HOME/.local/bin
-path+=$HOME/.ebcli-virtual-env/executables
 path+=$HOME/Dotfiles/zsh/ohmyzsh
-path+=$HOME/.volta/bin
 
 function extract {
  if [ -z "$1" ]; then
@@ -97,7 +94,16 @@ function extract {
     fi
 fi
 }
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source $ZSH/oh-my-zsh.sh &> /dev/null
+
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
