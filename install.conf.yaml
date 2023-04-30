@@ -7,13 +7,18 @@
 - clean: ['~']
 
 - link:
+    # Shell
     ~/.profile: profile
-    ~/.vimrc: vimrc
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
-    ~/.oh-my-zsh: zsh/ohmyzsh/
+    ~/.aliases: aliases
+    ~/.functions: functions
     ~/.zshrc: zshrc
     ~/.p10k.zsh: p10k.zsh
+    ~/.oh-my-zsh: zsh/ohmyzsh/
+    # Git
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    # Apps
+    ~/.vimrc: vimrc
     ~/.ssh/config: config
 
 - create:

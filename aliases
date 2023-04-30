@@ -1,0 +1,22 @@
+# Alias
+
+# Brew
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
+alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
+ARCH=$(uname -m)
+OS=$(uname -s)
+
+if [[ "$OS" == "Darwin" && "$ARCH" == "arm64" ]]; then
+  alias brew='mbrew'
+fi
+
+# Refreshments
+alias reload="source ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias ez="vim ~/.zshrc && reload"
+alias ev="vim ~/.vim/vimrc"
+
+# Helpers
+alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
+alias toupper="tr '[:lower:]' '[:upper:]'"
+alias tolower="tr '[:upper:]' '[:lower:]'"
+alias isodate='date "+%Y-%m-%dT%H:%M:%S"'

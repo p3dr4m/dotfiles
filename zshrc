@@ -5,37 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-function extract {
- if [ -z "$1" ]; then
-    # display usage if no parameters given
-    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
- else
-    if [ -f $1 ] ; then
-        NAME=${1%.*}
-        mkdir $NAME && cd $NAME
-        case $1 in
-          *.tar.bz2)   tar xvjf ../$1    ;;
-          *.tar.gz)    tar xvzf ../$1    ;;
-          *.tar.xz)    tar xvJf ../$1    ;;
-          *.lzma)      unlzma ../$1      ;;
-          *.bz2)       bunzip2 ../$1     ;;
-          *.rar)       unrar x -ad ../$1 ;;
-          *.gz)        gunzip ../$1      ;;
-          *.tar)       tar xvf ../$1     ;;
-          *.tbz2)      tar xvjf ../$1    ;;
-          *.tgz)       tar xvzf ../$1    ;;
-          *.zip)       unzip ../$1       ;;
-          *.Z)         uncompress ../$1  ;;
-          *.7z)        7z x ../$1        ;;
-          *.xz)        unxz ../$1        ;;
-          *.exe)       cabextract ../$1  ;;
-          *)           echo "extract: '$1' - unknown archive method" ;;
-        esac
-    else
-        echo "$1 - file does not exist"
-    fi
-fi
-}
+source ~/.functions
+source ~/.aliases
 
 # Execute directory names as cd command to that directory
 setopt AUTO_CD
@@ -70,68 +41,12 @@ setopt SHARE_HISTORY
 setopt RM_STAR_WAIT
 setopt NO_CLOBBER
 
-# Alias
-
-# Brew
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
-alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
-ARCH=$(uname -m)
-OS=$(uname -s)
-
-if [[ "$OS" == "Darwin" && "$ARCH" == "arm64" ]]; then
-  alias brew='mbrew'
-fi
-
-# Refreshments
-alias reload="source ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-alias ez="vim ~/.zshrc && reload"
-alias ev="vim ~/.vim/vimrc"
-
-# Helpers
-alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
-alias toupper="tr '[:lower:]' '[:upper:]'"
-alias tolower="tr '[:upper:]' '[:lower:]'"
-alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
-
-
 export ZSH_CUSTOM=$HOME/Dotfiles/zsh/custom
 export ZSH=$HOME/Dotfiles/zsh/ohmyzsh
 path+=/usr/local/bin
 path+=/bin
 path+=$HOME/.local/bin
 path+=$HOME/Dotfiles/zsh/ohmyzsh
-
-function extract {
- if [ -z "$1" ]; then
-    # display usage if no parameters given
-    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
- else
-    if [ -f $1 ] ; then
-        NAME=${1%.*}
-        mkdir $NAME && cd $NAME
-        case $1 in
-          *.tar.bz2)   tar xvjf ../$1    ;;
-          *.tar.gz)    tar xvzf ../$1    ;;
-          *.tar.xz)    tar xvJf ../$1    ;;
-          *.lzma)      unlzma ../$1      ;;
-          *.bz2)       bunzip2 ../$1     ;;
-          *.rar)       unrar x -ad ../$1 ;;
-          *.gz)        gunzip ../$1      ;;
-          *.tar)       tar xvf ../$1     ;;
-          *.tbz2)      tar xvjf ../$1    ;;
-          *.tgz)       tar xvzf ../$1    ;;
-          *.zip)       unzip ../$1       ;;
-          *.Z)         uncompress ../$1  ;;
-          *.7z)        7z x ../$1        ;;
-          *.xz)        unxz ../$1        ;;
-          *.exe)       cabextract ../$1  ;;
-          *)           echo "extract: '$1' - unknown archive method" ;;
-        esac
-    else
-        echo "$1 - file does not exist"
-    fi
-fi
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source $ZSH/oh-my-zsh.sh &> /dev/null
