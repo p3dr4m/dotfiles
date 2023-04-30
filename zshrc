@@ -80,8 +80,6 @@ OS=$(uname -s)
 
 if [[ "$OS" == "Darwin" && "$ARCH" == "arm64" ]]; then
   alias brew='mbrew'
-else
-  alias brew='ibrew'
 fi
 
 # Refreshments
