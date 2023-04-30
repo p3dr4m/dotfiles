@@ -73,8 +73,16 @@ setopt NO_CLOBBER
 # Alias
 
 # Brew
-alias brew='arch -x86_64 /usr/local/bin/brew'
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias mbrew='arch -arm64e /opt/homebrew/bin/brew'
+ARCH=$(uname -m)
+OS=$(uname -s)
+
+if [[ "$OS" == "Darwin" && "$ARCH" == "arm64" ]]; then
+  alias brew='mbrew'
+else
+  alias brew='ibrew'
+fi
 
 # Refreshments
 alias reload="source ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
@@ -126,14 +134,7 @@ function extract {
     fi
 fi
 }
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PATH"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 source $ZSH/oh-my-zsh.sh &> /dev/null
-
-
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
