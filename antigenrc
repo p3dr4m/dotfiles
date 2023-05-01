@@ -13,8 +13,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search 
 
 # Select theme
-#antigen theme denysdovhan/spaceship-prompt
-antigen theme romkatv/powerlevel10k 
+THEME=romkatv/powerlevel10k
+[[ `antigen list | grep $THEME | wc -l` -gt 0 ]] || antigen theme $THEME
 
 # Tell Antigen that you're done
 antigen apply

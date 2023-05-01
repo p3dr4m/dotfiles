@@ -13,7 +13,6 @@
     ~/.functions: functions
     ~/.zshrc: zshrc
     ~/.p10k.zsh: p10k.zsh
-    ~/.oh-my-zsh: zsh/ohmyzsh/
     ~/.antigenrc: antigenrc
     ~/.antigen.zsh: antigen.zsh
     # Git
