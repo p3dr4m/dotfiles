@@ -20,3 +20,6 @@ alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
 alias toupper="tr '[:lower:]' '[:upper:]'"
 alias tolower="tr '[:upper:]' '[:lower:]'"
 alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
+
+# apps
+alias eb="~/.ebcli-virtual-env/bin/eb"
