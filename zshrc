@@ -43,6 +43,7 @@ setopt NO_CLOBBER
 path+=/usr/local/bin
 path+=/bin
 path+=$HOME/.local/bin
+path+=$HOME/.ebcli-virtual-env/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
