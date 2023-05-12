@@ -23,3 +23,5 @@ alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
 
 # apps
 alias eb="~/.ebcli-virtual-env/bin/eb"
+alias python="python3"
+
