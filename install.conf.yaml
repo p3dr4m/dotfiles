@@ -10,7 +10,6 @@
     # Shell
     ~/.profile: profile
     ~/.zshenv: zsh/.zshenv
-    ~/.p10k.zsh: p10k.zsh
     ~/.config/zsh: zsh
     # Git
     ~/.gitconfig: gitconfig
