@@ -14,3 +14,4 @@ not-public
 *.local.zsh
 *.zwc
 *.zwc.old
+*.swp

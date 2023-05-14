@@ -4,21 +4,9 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 # Zsh options.
 setopt extended_glob
-
-# Autoload functions you might want to use with antidote.
-ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
-fpath=($ZFUNCDIR $fpath)
-
-# Source zstyles you might use with antidote.
-[[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
-
-# Clone antidote if necessary.
-[[ -d ${ZDOTDIR:-~}/.antidote ]] ||
-  git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
-
-
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
@@ -37,19 +25,24 @@ setopt HIST_IGNORE_SPACE
 setopt NO_HIST_BEEP
 setopt SHARE_HISTORY
 setopt RM_STAR_WAIT
-setopt NO_CLOBBER
+
+# Autoload functions you might want to use with antidote.
+ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
+fpath=($ZFUNCDIR $fpath)
+
+# Source zstyles you might use with antidote.
+[[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
+
+# Clone antidote if necessary.
+[[ -d ${ZDOTDIR:-~}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
+
 
 # Create an amazing Zsh config using antidote plugins.
+autoload -Uz compinit && compinit
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load
-
+antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/Users/pedram/.config/zsh/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall

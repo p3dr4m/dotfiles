@@ -11,7 +11,7 @@ if [[ "$OS" == "Darwin" && "$ARCH" == "arm64" ]]; then
 fi
 
 # Refreshments
-alias reload="source ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias reload="exec zsh && echo 'ZSH config reloaded from ~/.zshrc'"
 alias ez="vim ~/.zshrc && reload"
 alias ev="vim ~/.vim/vimrc"
 
