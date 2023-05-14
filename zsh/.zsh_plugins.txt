@@ -1,0 +1,18 @@
+romkatv/powerlevel10k
+$ZDOTDIR/.aliases
+romkatv/zsh-bench kind:path
+
+
+ohmyzsh/ohmyzsh path:lib/clipboard.zsh
+ohmyzsh/ohmyzsh path:plugins/copybuffer
+ohmyzsh/ohmyzsh path:plugins/copyfile
+ohmyzsh/ohmyzsh path:plugins/copypath
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/magic-enter
+ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
+ohmyzsh/ohmyzsh path:plugins/git
+
+zsh-users/zsh-syntax-highlighting kind:defer
+zsh-users/zsh-completions path:src kind:fpath
+zsh-users/zsh-autosuggestions kind:defer
+zsh-users/zsh-history-substring-search

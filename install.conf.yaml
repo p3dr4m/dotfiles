@@ -9,12 +9,9 @@
 - link:
     # Shell
     ~/.profile: profile
-    ~/.aliases: aliases
-    ~/.functions: functions
-    ~/.zshrc: zshrc
+    ~/.zshenv: zsh/.zshenv
     ~/.p10k.zsh: p10k.zsh
-    ~/.antigenrc: antigenrc
-    ~/.antigen.zsh: antigen.zsh
+    ~/.config/zsh: zsh
     # Git
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
