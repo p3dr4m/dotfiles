@@ -25,7 +25,7 @@ export PAGER="${PAGER:-less}"
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
-FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
 # Set the list of directories that zsh searches for commands.
 path=(
   $HOME/.evcli-virtual-env/bin
