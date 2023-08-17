@@ -12,8 +12,10 @@ fi
 
 # Refreshments
 alias reload="exec zsh && echo 'ZSH config reloaded from ~/.zshrc'"
-alias ez="vim ~/.zshrc && reload"
+alias ez="vim ~/.config/zsh/.zshrc && reload"
 alias ev="vim ~/.vim/vimrc"
+alias ea="vim ~/.config/zsh/.aliases && reload"
+alias ef="vim ~/.config/zsh/functions/global && reload"
 
 # Helpers
 alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"

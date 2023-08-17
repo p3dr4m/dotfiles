@@ -29,6 +29,7 @@ setopt RM_STAR_WAIT
 # Autoload functions you might want to use with antidote.
 ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
+autoload -Uk $ZFUNCDIR/*~*.zwc
 
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
@@ -39,6 +40,7 @@ fpath=($ZFUNCDIR $fpath)
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="~/.local/bin:$PATH"
 eval "$(pyenv init --path)"
 
 export NVM_DIR="$HOME/.nvm"
