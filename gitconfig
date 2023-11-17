@@ -14,6 +14,7 @@
 	diffc = diff --cached
 	last = log -1 HEAD
 	unstage = reset HEAD --
+	ncci = commit -a --allow-empty-message -m ''
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = true
