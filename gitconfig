@@ -16,7 +16,7 @@
 	unstage = reset HEAD --
 [core]
 	excludesfile = ~/.gitignore_global
-	autocrlf = false
+	autocrlf = true
 	eol = lf
 [push]
 	default = simple
