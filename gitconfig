@@ -17,7 +17,7 @@
 	ncci = commit -a --allow-empty-message -m ''
 [core]
 	excludesfile = ~/.gitignore_global
-	autocrlf = true
+	autocrlf = input
 	eol = lf
 [push]
 	default = simple
