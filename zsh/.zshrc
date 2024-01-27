@@ -40,7 +40,6 @@ autoload -Uk $ZFUNCDIR/*~*.zwc
 [[ -d ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
 
-
 # Create an amazing Zsh config using antidote plugins.
 autoload -Uz compinit && compinit
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
@@ -63,3 +62,4 @@ sudo() {
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
