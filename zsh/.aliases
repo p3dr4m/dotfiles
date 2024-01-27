@@ -16,12 +16,14 @@ alias ez="vim ~/.config/zsh/.zshrc && reload"
 alias ev="vim ~/.vim/vimrc"
 alias ea="vim ~/.config/zsh/.aliases && reload"
 alias ef="vim ~/.config/zsh/functions/global && reload"
-
+alias ep="vim ~/.config/zsh/.zprofile && reload"
+alias eg="vim ~/.gitconfig && reload"
 # Helpers
 alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
 alias toupper="tr '[:lower:]' '[:upper:]'"
 alias tolower="tr '[:upper:]' '[:lower:]'"
 alias isodate='date "+%Y-%m-%dT%H:%M:%S"'
+alias onedrive='rclone --vfs-cache-mode full mount --daemon onedrive: ~/OneDrive'
 
 # apps
 alias eb="~/.ebcli-virtual-env/bin/eb"

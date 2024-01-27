@@ -14,7 +14,8 @@
 	diffc = diff --cached
 	last = log -1 HEAD
 	unstage = reset HEAD --
-	ncci = commit -a --allow-empty-message -m ''
+  ncci = commit -a --allow-empty-message -m ''
+  zip = "!f() { git archive -o \"$1\" HEAD \"$@\"; }; f"
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input

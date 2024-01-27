@@ -4,3 +4,4 @@ function testme {
   echo "we good";
   return 0
 }
+
