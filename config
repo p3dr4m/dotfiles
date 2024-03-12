@@ -1,5 +1,11 @@
+Host router
+  HostName 192.168.1.1
+  User pedram
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+  StrictHostKeyChecking no
+
 Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/pedram
   StrictHostKeyChecking no
-  AddKeysToAgent yes

@@ -23,7 +23,7 @@ fi
 export EDITOR="${EDITOR:-vim}"
 export VISUAL="${VISUAL:-vim}"
 export PAGER="${PAGER:-less}"
-eval "$(/home/pedram/.local/bin/mise activate zsh)"
+eval "$(~/.local/bin/mise activate zsh)"
 
 #
 # Paths

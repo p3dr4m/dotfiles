@@ -4,6 +4,7 @@
 [user]
 	name = Pedram N
 	email = pednaz@proton.me
+	signingkey = ~/.ssh/pedram.pub
 [alias]
 	st = status
 	ci = commit
@@ -31,3 +32,5 @@
 	process = git-lfs filter-process
 [diff]
 	ignoreSubmodules = dirty
+[gpg]
+	format = ssh
