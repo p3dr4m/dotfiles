@@ -28,4 +28,4 @@ alias onedrive='rclone --vfs-cache-mode full mount --daemon onedrive: ~/OneDrive
 # apps
 alias eb="~/.ebcli-virtual-env/bin/eb"
 alias python="python3"
-
+alias pari="/usr/bin/gp"

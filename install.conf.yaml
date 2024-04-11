@@ -17,6 +17,8 @@
     # Apps
     ~/.vimrc: vimrc
     ~/.ssh/config: config
+    # tmux
+    ~/.tmux.conf: tmux.conf
 
 - create:
     - ~/Projects

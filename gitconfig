@@ -2,8 +2,8 @@
 [color]
 	ui = true
 [user]
-	name = Pedram N
-	email = pednaz@proton.me
+	name = p3dr4m
+	email = p3dr4m@hotmail.com
 	signingkey = ~/.ssh/pedram.pub
 [alias]
 	st = status
