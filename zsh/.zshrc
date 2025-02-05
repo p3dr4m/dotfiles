@@ -47,7 +47,7 @@ antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 
 # path
 export PATH="/home/pedram/.cargo/bin:$PATH"
-
+eval "$(~/.local/bin/mise activate zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
