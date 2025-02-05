@@ -23,7 +23,6 @@ fi
 export EDITOR="${EDITOR:-vim}"
 export VISUAL="${VISUAL:-vim}"
 export PAGER="${PAGER:-less}"
-eval "$(~/.local/bin/mise activate zsh)"
 
 #
 # Paths
