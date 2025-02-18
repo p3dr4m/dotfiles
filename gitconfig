@@ -34,3 +34,5 @@
 	ignoreSubmodules = dirty
 [gpg]
 	format = ssh
+[rerere]
+	enabled = 1

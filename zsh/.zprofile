@@ -23,13 +23,11 @@ fi
 export EDITOR="${EDITOR:-vim}"
 export VISUAL="${VISUAL:-vim}"
 export PAGER="${PAGER:-less}"
-eval "$(~/.local/bin/mise activate zsh)"
 
 #
 # Paths
 #
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-
+eval "$(/home/pedram/.local/bin/mise activate zsh --shims)"
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
 
