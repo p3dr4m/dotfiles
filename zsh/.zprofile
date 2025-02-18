@@ -34,6 +34,7 @@ typeset -gU path fpath
 path=(
   $HOME/.evcli-virtual-env/bin
   $HOME/{,s}bin(N)
+  $HOME/.local/bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
   $path
