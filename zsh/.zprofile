@@ -27,7 +27,6 @@ export PAGER="${PAGER:-less}"
 #
 # Paths
 #
-eval "$(/home/pedram/.local/bin/mise activate zsh --shims)"
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
 
