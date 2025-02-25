@@ -1,6 +1,5 @@
 # This is Git's per-user configuration file.
-[color]
-	ui = true
+
 [user]
 	name = p3dr4m
 	email = p3dr4m@hotmail.com
@@ -15,16 +14,38 @@
 	diffc = diff --cached
 	last = log -1 HEAD
 	unstage = reset HEAD --
-  ncci = commit -a --allow-empty-message -m ''
-  zip = "!f() { git archive -o \"$1\" HEAD \"$@\"; }; f"
+	ncci = commit -a --allow-empty-message -m ''
+	zip = "!f() { git archive -o \"$1\" HEAD \"$@\"; }; f"
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	eol = lf
+	fsmonitor = true
+	untrackedCache = true
+[color]
+	ui = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[branch]
+	sort = -committerdate
+[column]
+	ui = auto
+[tag]
+	sort = version:refname
+[init]
+	defaultBranch = main
 [push]
 	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
 [pull]
-	rebase = false
+	rebase = true
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
@@ -32,7 +53,18 @@
 	process = git-lfs filter-process
 [diff]
 	ignoreSubmodules = dirty
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
 [gpg]
 	format = ssh
 [rerere]
-	enabled = 1
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[merge]
+	conflictStyle = zdiff3
