@@ -7,7 +7,6 @@ terraform = "latest"
 uv = "latest"
 
 [env]
-NODE_ENV = 'production'
 _.path = ['{{config_root}}/node_modules/.bin']
 
 # Use the project name derived from the current directory
