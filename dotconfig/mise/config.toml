@@ -1,4 +1,23 @@
 [tools]
 go = "latest"
 node = "23"
+"npm:turbo" = "latest"
 python = "latest"
+terraform = "latest"
+uv = "latest"
+
+[env]
+NODE_ENV = 'production'
+_.path = ['{{config_root}}/node_modules/.bin']
+
+# Use the project name derived from the current directory
+PROJECT_NAME = "{{ config_root | basename }}"
+
+# Set up the path for node module binaries
+BIN_PATH = "{{ config_root }}/node_modules/.bin"
+
+[tasks.build]
+run = 'echo "running build tasks"'
+
+[settings]
+python.uv_venv_auto = true
