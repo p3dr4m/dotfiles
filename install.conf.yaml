@@ -7,18 +7,21 @@
 - clean: ['~']
 
 - link:
-    # Shell
-    ~/.profile: profile
-    ~/.zshenv: zsh/.zshenv
-    ~/.config/zsh: zsh
-    # Git
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
-    # Apps
-    ~/.vimrc: vimrc
-    ~/.ssh/config: config
-    # tmux
-    ~/.tmux.conf: tmux.conf
+    # Shell and Dotconfig
+    ~/.zshenv: .zshenv
+    ~/.config/zsh: dotconfig/zsh
+    ~/.config/mise/: dotconfig/mise
+    ~/.config/tmux.conf: dotconfig/tmux
+    ~/.config/git: dotconfig/git
+
+    # Older Apps
+    ~/.vimrc: .vimrc
+    ~/.ssh/config: ssh/config
+
+    # Global Editor Config
+    ~/.editorconfig: .editorconfig
+
+
 
 - create:
     - ~/Projects
