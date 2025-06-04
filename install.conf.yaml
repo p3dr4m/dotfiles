@@ -7,15 +7,16 @@
 - clean: ['~']
 
 - link:
-    # Shell and Dotconfig
+    # Shell
     ~/.zshenv: .zshenv
+
+    # XDG Config
     ~/.config/zsh: dotconfig/zsh
     ~/.config/mise: dotconfig/mise
     ~/.config/tmux: dotconfig/tmux
     ~/.config/git: dotconfig/git
-
-    # Older Apps
-    ~/.vimrc: .vimrc
+    ~/.config/vim: dotconfig/vim
+    
     ~/.ssh/config: ssh/config
 
     # Global Editor Config
