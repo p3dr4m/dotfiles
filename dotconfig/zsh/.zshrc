@@ -32,8 +32,9 @@ setopt RM_STAR_WAIT
 # Autoload functions you might want to use with antidote.
 ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
-fpath=($HOME/.docker/completions $fpath)
 
+# export PATH="$PATH:$HOME/.docker/bin"
+# export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 autoload -Uk $ZFUNCDIR/*~*.zwc
 
 # Source zstyles you might use with antidote.
@@ -43,14 +44,22 @@ autoload -Uk $ZFUNCDIR/*~*.zwc
 [[ -d ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
 
-# Create an amazing Zsh config using antidote plugins.
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+# fpath=("$HOME/.docker/completions" $fpath)
+FPATH="$HOME/.docker/completions:$FPATH"
+# End of Docker CLI completions
+eval "$(mise activate zsh)"
 autoload -Uz compinit && compinit
+
+# Create an amazing Zsh config using antidote plugins.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 
-# path
-# eval "$(~/.local/bin/mise activate zsh)"
-eval "$(mise activate zsh)"
-
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+# fpath=(/Users/pedram/.docker/completions $fpath)
+# autoload -Uz compinit
+# compinit
+# End of Docker CLI completions
