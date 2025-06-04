@@ -32,6 +32,8 @@ setopt RM_STAR_WAIT
 # Autoload functions you might want to use with antidote.
 ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
+fpath=(~/.docker/completions $fpath)
+
 autoload -Uk $ZFUNCDIR/*~*.zwc
 
 # Source zstyles you might use with antidote.
