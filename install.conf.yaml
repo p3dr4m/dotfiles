@@ -2,7 +2,7 @@
     link:
       create: true
       relink: true
-      force: true
+      force: false
 
 - clean: ['~']
 
@@ -10,8 +10,8 @@
     # Shell and Dotconfig
     ~/.zshenv: .zshenv
     ~/.config/zsh: dotconfig/zsh
-    ~/.config/mise/: dotconfig/mise
-    ~/.config/tmux.conf: dotconfig/tmux
+    ~/.config/mise: dotconfig/mise
+    ~/.config/tmux: dotconfig/tmux
     ~/.config/git: dotconfig/git
 
     # Older Apps
