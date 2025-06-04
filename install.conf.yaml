@@ -1,3 +1,7 @@
+# if: uname # either Linux or Darwin specific
+# if: ver # Windows specific
+# if: '[[ "$(uname -s)" == "Linux" ]]' # Linux specific
+# if: '[[ "$(uname -s)" == "Darwin" ]]' # macOS specific
 - defaults:
     link:
       create: true
@@ -16,7 +20,7 @@
     ~/.config/tmux: dotconfig/tmux
     ~/.config/git: dotconfig/git
     ~/.config/vim: dotconfig/vim
-    
+
     ~/.ssh/config: ssh/config
 
     # Global Editor Config
