@@ -32,7 +32,7 @@ setopt RM_STAR_WAIT
 # Autoload functions you might want to use with antidote.
 ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
-fpath=(~/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 
 autoload -Uk $ZFUNCDIR/*~*.zwc
 
@@ -54,4 +54,3 @@ eval "$(mise activate zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
