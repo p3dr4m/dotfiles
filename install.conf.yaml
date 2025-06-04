@@ -21,9 +21,10 @@
     ~/.config/git: dotconfig/git
     ~/.config/vim: dotconfig/vim
 
+    # Hardcoded Configs
     ~/.ssh/config: ssh/config
 
-    # Global Editor Config
+    # Reverse Recursive Lookup
     ~/.editorconfig: .editorconfig
 
 
