@@ -1,3 +1,4 @@
+getantidote/use-omz
 romkatv/powerlevel10k
 $ZDOTDIR/.aliases
 romkatv/zsh-bench kind:path
