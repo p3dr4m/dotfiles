@@ -13,6 +13,7 @@
 - link:
     # Shell
     ~/.zshenv: .zshenv
+    ~/.bashrc: .bashrc
 
     # XDG Config
     ~/.config/zsh: dotconfig/zsh
@@ -20,6 +21,7 @@
     ~/.config/tmux: dotconfig/tmux
     ~/.config/git: dotconfig/git
     ~/.config/vim: dotconfig/vim
+    ~/.config/starship.toml: dotconfig/starship.toml
 
     # Hardcoded Configs
     ~/.ssh/config: ssh/config
@@ -34,3 +36,5 @@
 
 - shell:
     - [git submodule update --init --recursive --progress, Installing submodules]
+    - [command -v starship || curl -sS https://starship.rs/install.sh | sh, Installing Starship]
+    - [command -v mise || curl https://mise.run | sh, Installing mise]
