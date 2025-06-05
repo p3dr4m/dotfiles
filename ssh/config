@@ -9,3 +9,4 @@ Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/pedram
   StrictHostKeyChecking no
+  ConnectionAttempts 50
