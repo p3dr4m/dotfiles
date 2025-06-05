@@ -36,5 +36,6 @@
 
 - shell:
     - [git submodule update --init --recursive --progress, Installing submodules]
-    - [command -v starship || curl -sS https://starship.rs/install.sh | sh, Installing Starship]
+
+    - [command -v starship || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f, Installing Starship]
     - [command -v mise || curl https://mise.run | sh, Installing mise]
