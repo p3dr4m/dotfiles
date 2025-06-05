@@ -1,7 +1,6 @@
 # If you use Oh-My-Zsh with antidote, load this plugin FIRST to set things up so you
 # don't have to worry about whether OMZ will work correctly.
 getantidote/use-omz
-romkatv/powerlevel10k
 
 # My aliases
 $ZDOTDIR/.aliases

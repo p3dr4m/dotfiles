@@ -32,7 +32,6 @@ typeset -gU path fpath
 
 # Set the list of directories that zsh searches for commands.
 path=(
-  $HOME/.evcli-virtual-env/bin
   $HOME/{,s}bin(N)
   $HOME/.local/bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
