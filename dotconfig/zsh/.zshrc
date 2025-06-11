@@ -6,6 +6,7 @@ setopt PUSHD_IGNORE_DUPS
 setopt nobanghist
 unsetopt beep
 unsetopt nomatch
+setopt POSIX_ALIASES
 #unset zle_bracketed_paste
 
 # History
@@ -25,9 +26,6 @@ setopt RM_STAR_WAIT
 # Autoload functions you might want to use with antidote.
 ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
-
-# export PATH="$PATH:$HOME/.docker/bin"
-# export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 autoload -Uk $ZFUNCDIR/*~*.zwc
 
 # Source zstyles you might use with antidote.
@@ -38,9 +36,9 @@ autoload -Uk $ZFUNCDIR/*~*.zwc
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-# fpath=("$HOME/.docker/completions" $fpath)
 FPATH="$HOME/.docker/completions:$FPATH"
 # End of Docker CLI completions
+
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 autoload -Uz compinit && compinit
