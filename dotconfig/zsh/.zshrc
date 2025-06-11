@@ -6,8 +6,6 @@ setopt PUSHD_IGNORE_DUPS
 setopt nobanghist
 unsetopt beep
 unsetopt nomatch
-setopt POSIX_ALIASES
-#unset zle_bracketed_paste
 
 # History
 SAVEHIST=10000
