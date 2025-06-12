@@ -14,11 +14,10 @@ ohmyzsh/ohmyzsh path:plugins/copybuffer
 ohmyzsh/ohmyzsh path:plugins/copyfile
 ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/extract
-ohmyzsh/ohmyzsh path:plugins/globaliasgrv
+ohmyzsh/ohmyzsh path:plugins/globaliasg
 ohmyzsh/ohmyzsh path:plugins/magic-enter
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 ohmyzsh/ohmyzsh path:plugins/otp
-#ohmyzsh/ohmyzsh path:plugins/zoxide
 ohmyzsh/ohmyzsh path:plugins/command-not-found
 
 # Add some programmer plugins
