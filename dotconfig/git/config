@@ -27,6 +27,7 @@
 	autocorrect = prompt
 [commit]
 	verbose = true
+  gpgSign = true
 [branch]
 	sort = -committerdate
 [column]
