@@ -2,18 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "zsh/ohmyzsh"]
-	path = zsh/ohmyzsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
-[submodule "zsh/plugins/zsh-completions"]
-	path = zsh/custom/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/plugins/themes/powerlevel10k"]
-	path = zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "zsh/custom/plugins/zsh-autosuggestions"]
-	path = zsh/custom/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "dotbot-ifplatform"]
+	path = dotbot-ifplatform
+	url = https://github.com/ssbanerje/dotbot-ifplatform.git
