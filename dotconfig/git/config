@@ -69,3 +69,5 @@
 	updateRefs = true
 [merge]
 	conflictStyle = zdiff3
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
