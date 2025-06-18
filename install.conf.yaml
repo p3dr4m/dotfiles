@@ -8,7 +8,7 @@
       relink: true
       force: false
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     # Shell
@@ -22,6 +22,8 @@
     ~/.config/git: dotconfig/git
     ~/.config/vim: dotconfig/vim
     ~/.config/starship.toml: dotconfig/starship.toml
+    ~/.config/systemd: dotconfig/systemd
+    ~/.config/environment.d: dotconfig/environment.d
 
     # Hardcoded Configs
     ~/.ssh/config: ssh/config
@@ -29,13 +31,17 @@
     # Reverse Recursive Lookup
     ~/.editorconfig: .editorconfig
 
-
-
 - create:
     - ~/Projects
 
 - shell:
-    - [git submodule update --init --recursive --progress, Installing submodules]
+    - [
+        git submodule update --init --recursive --progress,
+        Installing submodules,
+      ]
 
-    - [command -v starship || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f, Installing Starship]
+    - [
+        command -v starship || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f,
+        Installing Starship,
+      ]
     - [command -v mise || curl https://mise.run | sh, Installing mise]
