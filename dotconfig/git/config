@@ -3,7 +3,7 @@
 [user]
 	name = p3dr4m
 	email = p3dr4m@hotmail.com
-	signingkey = ~/.ssh/pedram.pub
+	signingKey = ~/.ssh/pedram.pub
 [alias]
 	st = status
 	ci = commit
@@ -34,6 +34,7 @@
 	ui = auto
 [tag]
 	sort = version:refname
+	gpgsign = true
 [init]
 	defaultBranch = main
 [push]
