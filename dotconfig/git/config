@@ -3,7 +3,7 @@
 [user]
 	name = p3dr4m
 	email = p3dr4m@hotmail.com
-	signingKey = ~/.ssh/pedram.pub
+	signingkey = ~/.ssh/pedram.pub
 [alias]
 	st = status
 	ci = commit
