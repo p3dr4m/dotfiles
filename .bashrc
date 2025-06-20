@@ -131,3 +131,4 @@ export COMPOSE_BAKE=true
 
 eval "$(mise activate bash)"
 eval "$(starship init bash)"
+eval "$(keychain --eval pedram)"

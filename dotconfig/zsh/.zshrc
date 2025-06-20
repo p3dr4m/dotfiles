@@ -39,7 +39,7 @@ FPATH="$HOME/.docker/completions:$FPATH"
 
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
-eval "$(keychain --eval --agents ssh pedram)"
+eval "$(keychain --eval pedram)"
 autoload -Uz compinit && compinit
 
 # Create an amazing Zsh config using antidote plugins.
