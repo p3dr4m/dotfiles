@@ -21,6 +21,7 @@
 	eol = lf
 	fsmonitor = true
 	untrackedCache = true
+  editor = "code --wait"
 [color]
 	ui = true
 [help]
