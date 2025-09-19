@@ -1,8 +1,11 @@
 [tools]
+cmake = "latest"
 go = "latest"
+make = "latest"
 node = "latest"
 "npm:turbo" = "latest"
 python = "latest"
+rust = "latest"
 terraform = "latest"
 uv = "latest"
 
@@ -21,3 +24,4 @@ run = 'echo "running build tasks"'
 [settings]
 python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = []
+experimental = true
