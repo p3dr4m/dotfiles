@@ -1,6 +1,6 @@
 [tools]
 go = "latest"
-node = "23"
+node = "latest"
 "npm:turbo" = "latest"
 python = "latest"
 terraform = "latest"
@@ -20,3 +20,4 @@ run = 'echo "running build tasks"'
 
 [settings]
 python.uv_venv_auto = true
+idiomatic_version_file_enable_tools = []
