@@ -43,6 +43,6 @@
     - [command -v mise || curl https://mise.run | sh, Installing mise]
     # Install keychain on apt-based systems
     -
-      command: sudo apt-get update && sudo apt-get install -y keychain
-      description: Installing keychain (apt-based systems)
+      command: 'command -v keychain || (sudo apt-get update && sudo apt-get install -y keychain)'
+      description: Installing keychain (apt-based systems, only if missing)
       if: 'command -v apt-get'
