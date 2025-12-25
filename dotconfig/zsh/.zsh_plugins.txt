@@ -17,13 +17,14 @@ ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/globalias
 ohmyzsh/ohmyzsh path:plugins/magic-enter
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
-ohmyzsh/ohmyzsh path:plugins/otp
 ohmyzsh/ohmyzsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/keychain kind:defer
+ohmyzsh/ohmyzsh path:plugins/gpg-agent kind:defer
 
 # Add some programmer plugins
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/git-extras
-ohmyzsh/ohmyzsh path:plugins/golang
+#ohmyzsh/ohmyzsh path:plugins/golang
 ohmyzsh/ohmyzsh path:plugins/python
 
 # Add macOS specific plugins
@@ -32,6 +33,7 @@ ohmyzsh/ohmyzsh path:plugins/macos conditional:ismacos
 
 # Add binary utils
 romkatv/zsh-bench kind:path
+romkatv/zsh-defer kind:path
 
 zsh-users/zsh-syntax-highlighting kind:defer
 zsh-users/zsh-completions path:src kind:fpath

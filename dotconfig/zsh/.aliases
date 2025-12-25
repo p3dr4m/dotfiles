@@ -30,3 +30,4 @@ alias onedrive='rclone --vfs-cache-mode full mount --daemon onedrive: ~/OneDrive
 alias python="python3"
 alias pari="/usr/bin/gp"
 alias bootwin="~/Desktop/reboot-windows.sh"
+alias zsync="source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh && antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt"

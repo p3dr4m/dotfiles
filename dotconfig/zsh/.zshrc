@@ -1,3 +1,4 @@
+#zmodload zsh/zprof
 # Zsh options.
 setopt extended_glob
 setopt AUTO_CD
@@ -20,7 +21,6 @@ setopt HIST_IGNORE_SPACE
 setopt NO_HIST_BEEP
 setopt SHARE_HISTORY
 setopt RM_STAR_WAIT
-
 # Autoload functions you might want to use with antidote.
 ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
@@ -37,11 +37,28 @@ autoload -Uk $ZFUNCDIR/*~*.zwc
 FPATH="$HOME/.docker/completions:$FPATH"
 # End of Docker CLI completions
 
-eval "$(mise activate zsh)"
-eval "$(starship init zsh)"
-eval "$(keychain --eval -q pedram)"
-autoload -Uz compinit && compinit
-
 # Create an amazing Zsh config using antidote plugins.
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
-antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+ZPLUG_CACHE="${ZDOTDIR:-$HOME}/.zsh_plugins.zsh"
+if [[ -f "$ZPLUG_CACHE" ]]; then
+  source "$ZPLUG_CACHE"
+else
+  # Fallback if cache is missing
+  source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+  antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+fi
+
+if command -v mise &> /dev/null; then
+  activate_mise() {
+    eval "$(mise activate zsh)"
+    unfunction activate_mise
+  }
+  zsh-defer activate_mise
+fi
+eval "$(starship init zsh)"
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
+  compinit -C
+else
+  compinit
+fi
+#zprof
