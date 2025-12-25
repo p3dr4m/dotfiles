@@ -21,7 +21,7 @@
 	eol = lf
 	fsmonitor = true
 	untrackedCache = true
-  editor = "code --wait"
+	editor = "code --wait"
 [color]
 	ui = true
 [help]
@@ -70,4 +70,3 @@
 	updateRefs = true
 [merge]
 	conflictStyle = zdiff3
-

@@ -45,6 +45,6 @@
       if: 'command -v apt-get'
 
     - [
-        '[ -L ~/.ssh/config ] && rm ~/.ssh/config; mkdir -p ~/.ssh && touch ~/.ssh/config && grep -q "Include ~/Projects/Dotfiles/ssh/config" ~/.ssh/config || echo "Include ~/Projects/Dotfiles/ssh/config" >> ~/.ssh/config',
+        '[ -L ~/.ssh/config ] && rm ~/.ssh/config; mkdir -p ~/.ssh && touch ~/.ssh/config && grep -q "Include $(pwd)/ssh/config" ~/.ssh/config || echo "Include $(pwd)/ssh/config" >> ~/.ssh/config',
         Configuring SSH (Include),
       ]

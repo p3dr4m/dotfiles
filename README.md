@@ -33,4 +33,4 @@ My personal dotfiles managed with [Dotbot](https://github.com/anishathalye/dotbo
 ## Customization
 
 - **Git**: Create `~/.gitconfig.local` for machine-specific git configuration (e.g., work email).
-- **SSH**: The installation script automatically includes `~/Projects/Dotfiles/ssh/config` in your `~/.ssh/config`. Add your keys to `~/.ssh/`.
+- **SSH**: The installation script automatically includes the `ssh/config` from this repository in your `~/.ssh/config`. Add your keys to `~/.ssh/`.
