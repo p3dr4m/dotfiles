@@ -9,6 +9,7 @@ Host router
 Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/pedram
+  IdentityAgent ~/.ssh/agent.sock
   StrictHostKeyChecking accept-new
   UpdateHostKeys yes
   ConnectionAttempts 5

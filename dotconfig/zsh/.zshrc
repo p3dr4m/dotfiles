@@ -78,10 +78,15 @@ if [[ "$OSTYPE" == linux* ]]; then
     sleep 1
   fi
 
+  # Create a stable symlink for SSH IdentityAgent
+  mkdir -p ~/.ssh
+  ln -sf "${XDG_RUNTIME_DIR%/}/ssh-agent.socket" ~/.ssh/agent.sock
+
   # Load SSH keys (only if not already loaded)
   if ! ssh-add -l 2>/dev/null | grep -q pedram; then
-    ssh-add ~/.ssh/pedram 2>/dev/null || true
+    ssh-add ~/.ssh/pedram
   fi
+
 elif [[ "$OSTYPE" == darwin* ]]; then
   # macOS: optionally use keychain
   # Uncomment the following lines to enable keychain integration
