@@ -63,5 +63,6 @@ if command -v mise &> /dev/null; then
   zsh-defer activate_mise
 fi
 eval "$(starship init zsh)"
+eval "$(keychain --eval -q pedram)"
 
 #zprof
