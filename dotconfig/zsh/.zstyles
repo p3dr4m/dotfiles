@@ -10,7 +10,6 @@
 # zstyle ':antidote:bundle' file ${ZDOTDIR:-~}/.zplugins.txt
 # zstyle ':antidote:bundle' use-friendly-names 'yes'
 
-zstyle :omz:plugins:keychain agents gpg,ssh
-zstyle :omz:plugins:keychain identities pedram
-zstyle :omz:plugins:keychain options --quiet
-
+# zstyle :omz:plugins:keychain agents gpg,ssh
+# zstyle :omz:plugins:keychain identities pedram
+# zstyle :omz:plugins:keychain options --quiet

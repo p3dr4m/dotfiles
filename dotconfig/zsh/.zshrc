@@ -29,6 +29,14 @@ autoload -Uk $ZFUNCDIR/*~*.zwc
 # Source zstyles you might use with antidote.
 [[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
 
+# Initialize completion system
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
+  compinit -C
+else
+  compinit
+fi
+
 # Clone antidote if necessary.
 [[ -d ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
@@ -55,10 +63,5 @@ if command -v mise &> /dev/null; then
   zsh-defer activate_mise
 fi
 eval "$(starship init zsh)"
-autoload -Uz compinit
-if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
-  compinit -C
-else
-  compinit
-fi
+
 #zprof

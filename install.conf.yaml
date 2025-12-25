@@ -21,9 +21,6 @@
     ~/.config/systemd: dotconfig/systemd
     ~/.config/environment.d: dotconfig/environment.d
 
-    # Hardcoded Configs
-    ~/.ssh/config: ssh/config
-
     # Reverse Recursive Lookup
     ~/.editorconfig: .editorconfig
 
@@ -37,7 +34,7 @@
       ]
 
     - [
-        command -v starship || sh -c "$(curl -fsSL https://starship.rs/install.sh)" -y -f,
+        command -v starship || curl -fsSL https://starship.rs/install.sh | sh -s -- -y -f,
         Installing Starship,
       ]
     - [command -v mise || curl https://mise.run | sh, Installing mise]
@@ -46,3 +43,8 @@
       command: 'command -v keychain || (sudo apt-get update && sudo apt-get install -y keychain)'
       description: Installing keychain (apt-based systems, only if missing)
       if: 'command -v apt-get'
+
+    - [
+        '[ -L ~/.ssh/config ] && rm ~/.ssh/config; mkdir -p ~/.ssh && touch ~/.ssh/config && grep -q "Include ~/Projects/Dotfiles/ssh/config" ~/.ssh/config || echo "Include ~/Projects/Dotfiles/ssh/config" >> ~/.ssh/config',
+        Configuring SSH (Include),
+      ]
