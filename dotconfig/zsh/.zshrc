@@ -66,6 +66,6 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
 
-eval "$(keychain --eval -q --agents ssh pedram)"
+eval "$(keychain --eval -q pedram)"
 
 #zprof

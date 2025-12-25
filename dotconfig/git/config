@@ -3,7 +3,7 @@
 [user]
 	name = p3dr4m
 	email = p3dr4m@hotmail.com
-	signingkey = ~/.ssh/pedram
+	signingkey = ~/.ssh/pedram.pub
 [alias]
 	st = status
 	ci = commit
@@ -61,7 +61,6 @@
 	renames = true
 [gpg]
 	format = ssh
-
 [gpg "ssh"]
 	allowedSignersFile = ~/.config/git/allowed_signers
 [rerere]
