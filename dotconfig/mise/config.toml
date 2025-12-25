@@ -2,10 +2,10 @@
 cmake = "latest"
 go = "latest"
 make = "latest"
-node = "latest"
+node = "20"
 "npm:turbo" = "latest"
-python = "latest"
-rust = "latest"
+python = "3.12"
+rust = "stable"
 terraform = "latest"
 uv = "latest"
 
@@ -24,4 +24,4 @@ run = 'echo "running build tasks"'
 [settings]
 python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = []
-experimental = true
+experimental = false

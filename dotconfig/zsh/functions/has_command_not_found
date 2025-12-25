@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+function has_command_not_found {
+  command -v command-not-found >/dev/null 2>&1
+}

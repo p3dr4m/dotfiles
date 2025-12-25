@@ -13,14 +13,26 @@ fi
 # Refreshments
 alias reload="exec zsh && echo 'ZSH config reloaded from ~/.zshrc'"
 alias ez="vim ~/.config/zsh/.zshrc && reload"
-alias ev="vim ~/.vim/vimrc"
+alias ev="vim ~/.config/vim/vimrc"
 alias ea="vim ~/.config/zsh/.aliases && reload"
 alias ef="vim ~/.config/zsh/functions/global && reload"
 alias ep="vim ~/.config/zsh/.zprofile && reload"
-alias eg="vim ~/.gitconfig && reload"
+alias eg="vim ~/.config/git/config && reload"
 
 # Helpers
-alias copyuuid="uuidgen | tr -d '\n' | pbcopy; pbpaste"
+copyuuid() {
+  local u
+  u="$(uuidgen | tr -d '\n')" || return 1
+  if command -v pbcopy >/dev/null 2>&1; then
+    printf "%s" "$u" | pbcopy && pbpaste
+  elif command -v wl-copy >/dev/null 2>&1; then
+    printf "%s" "$u" | wl-copy && printf "%s\n" "$u"
+  elif command -v xclip >/dev/null 2>&1; then
+    printf "%s" "$u" | xclip -selection clipboard && printf "%s\n" "$u"
+  else
+    printf "%s\n" "$u"
+  fi
+}
 alias toupper="tr '[:lower:]' '[:upper:]'"
 alias tolower="tr '[:upper:]' '[:lower:]'"
 alias isodate='date "+%Y-%m-%dT%H:%M:%S"'

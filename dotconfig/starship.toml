@@ -12,6 +12,7 @@ $character"""
 
 [directory]
 style = "blue"
+truncate_to_repo = true
 
 [character]
 success_symbol = "[❯](purple)"
@@ -40,6 +41,10 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
+min_time = 500
+
+[status]
+disabled = false
 
 [python]
 format = "[$virtualenv]($style) "

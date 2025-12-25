@@ -62,7 +62,11 @@ if command -v mise &> /dev/null; then
   }
   zsh-defer activate_mise
 fi
-eval "$(starship init zsh)"
-eval "$(keychain --eval -q pedram)"
+if command -v starship &> /dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# Use systemd-managed ssh-agent; avoid keychain for Linux
+# (keychain can be kept on macOS if desired in a guarded block)
 
 #zprof

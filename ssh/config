@@ -3,10 +3,12 @@ Host router
   User pedram
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
-  StrictHostKeyChecking no
+  StrictHostKeyChecking accept-new
+  UpdateHostKeys yes
 
 Host *
   AddKeysToAgent yes
   IdentityFile ~/.ssh/pedram
-  StrictHostKeyChecking no
-  ConnectionAttempts 50
+  StrictHostKeyChecking accept-new
+  UpdateHostKeys yes
+  ConnectionAttempts 5

@@ -17,8 +17,11 @@
     ~/.config/tmux: dotconfig/tmux
     ~/.config/git: dotconfig/git
     ~/.config/vim: dotconfig/vim
+    ~/.vimrc: dotconfig/vim/vimrc
     ~/.config/starship.toml: dotconfig/starship.toml
-    ~/.config/systemd: dotconfig/systemd
+    ~/.config/systemd:
+      path: dotconfig/systemd
+      force: true
     ~/.config/environment.d: dotconfig/environment.d
 
     # Reverse Recursive Lookup
@@ -38,11 +41,14 @@
         Installing Starship,
       ]
     - [command -v mise || curl https://mise.run | sh, Installing mise]
-    # Install keychain on apt-based systems
     -
-      command: 'command -v keychain || (sudo apt-get update && sudo apt-get install -y keychain)'
-      description: Installing keychain (apt-based systems, only if missing)
-      if: 'command -v apt-get'
+      command: 'mise doctor || true'
+      description: Validating mise setup
+      if: 'command -v mise'
+    -
+      command: 'command -v mise && mise install || true'
+      description: Installing pinned mise tools
+      if: 'command -v mise'
 
     -
       command: systemctl --user daemon-reload && systemctl --user enable --now ssh-agent
@@ -53,3 +59,14 @@
         '[ -L ~/.ssh/config ] && rm ~/.ssh/config; mkdir -p ~/.ssh && touch ~/.ssh/config && grep -q "Include $(pwd)/ssh/config" ~/.ssh/config || echo "Include $(pwd)/ssh/config" >> ~/.ssh/config',
         Configuring SSH (Include),
       ]
+
+    # Tmux plugin manager (TPM) and plugins
+    -
+      command: '[ -d ~/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
+      description: Installing tmux plugin manager (TPM)
+      if: 'command -v tmux'
+
+    -
+      command: '[ -x ~/.tmux/plugins/tpm/scripts/install_plugins.sh ] && ~/.tmux/plugins/tpm/scripts/install_plugins.sh || true'
+      description: Installing tmux plugins
+      if: 'command -v tmux'
