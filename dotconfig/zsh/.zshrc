@@ -66,32 +66,6 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
 
-# Use systemd-managed ssh-agent; avoid keychain for Linux
-# (keychain can be kept on macOS if desired in a guarded block)
-if [[ "$OSTYPE" == linux* ]]; then
-  # Linux: use systemd-managed ssh-agent
-  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR%/}/ssh-agent.socket"
-
-  # Ensure systemd ssh-agent service is running
-  if ! systemctl --user is-active --quiet ssh-agent; then
-    systemctl --user start ssh-agent 2>/dev/null || true
-    sleep 1
-  fi
-
-  # Create a stable symlink for SSH IdentityAgent
-  mkdir -p ~/.ssh
-  ln -sf "${XDG_RUNTIME_DIR%/}/ssh-agent.socket" ~/.ssh/agent.sock
-
-  # Load SSH keys (only if not already loaded)
-  if ! ssh-add -l 2>/dev/null | grep -q pedram; then
-    ssh-add ~/.ssh/pedram
-  fi
-
-elif [[ "$OSTYPE" == darwin* ]]; then
-  # macOS: optionally use keychain
-  # Uncomment the following lines to enable keychain integration
-  eval "$(ssh-agent -s)"
-  ssh-add --apple-use-keychain ~/.ssh/pedram 2>/dev/null || true
-fi
+eval "$(keychain --eval -q --agents ssh pedram)"
 
 #zprof
