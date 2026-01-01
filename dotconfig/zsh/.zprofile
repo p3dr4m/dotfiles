@@ -27,6 +27,9 @@ export PAGER="${PAGER:-less}"
 #
 # Paths
 #
+
+eval "$(mise activate zsh --shims)"
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU path fpath
 
