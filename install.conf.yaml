@@ -12,6 +12,7 @@
     ~/.bashrc: .bashrc
 
     # XDG Config
+    ~/.config/uv: dotconfig/uv
     ~/.config/zsh: dotconfig/zsh
     ~/.config/mise: dotconfig/mise
     ~/.config/tmux: dotconfig/tmux

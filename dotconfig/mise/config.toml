@@ -1,5 +1,7 @@
 [tools]
+aws-cli = { version = "latest", symlink_bins = "true" }
 cmake = "latest"
+gcloud = "latest"
 go = "latest"
 make = "latest"
 node = "latest"

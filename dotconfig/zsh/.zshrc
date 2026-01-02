@@ -66,12 +66,6 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/p/google-cloud-sdk/path.zsh.inc' ]; then . '/home/p/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/p/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/p/google-cloud-sdk/completion.zsh.inc'; fi
-
 eval "$(keychain --eval -q pedram)"
 
 #zprof
