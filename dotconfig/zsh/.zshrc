@@ -66,8 +66,6 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
 
-export PATH="/home/p/.amp/bin:$PATH"
-
 eval "$(keychain --eval -q pedram)"
 
 #zprof

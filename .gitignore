@@ -15,3 +15,5 @@ not-public
 *.zwc
 *.zwc.old
 *.swp
+**/tmux/plugins
+
