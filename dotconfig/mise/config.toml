@@ -22,6 +22,14 @@ BIN_PATH = "{{ config_root }}/node_modules/.bin"
 [tasks.build]
 run = 'echo "running build tasks"'
 
+[tasks.jupyter]
+description = "Start global JupyterLab server"
+run = """
+cd ~/jupyter
+source .venv/bin/activate
+jupyter lab --no-browser --ip=127.0.0.1
+"""
+
 [settings]
 python.uv_venv_auto = true
 idiomatic_version_file_enable_tools = []
