@@ -6,6 +6,12 @@ Host router
   StrictHostKeyChecking accept-new
   UpdateHostKeys yes
 
+Host devbox
+  HostName ped-pc-win
+  User p
+  AddKeysToAgent yes
+  Port 10022
+
 Host *
   IdentityFile ~/.ssh/pedram
   StrictHostKeyChecking accept-new
