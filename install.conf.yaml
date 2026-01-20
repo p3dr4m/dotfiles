@@ -51,16 +51,6 @@
       description: Installing pinned mise tools
       if: 'command -v mise'
 
-    -
-      command: systemctl --user daemon-reload && systemctl --user enable --now ssh-agent
-      description: Enabling ssh-agent systemd service
-      if: '[ -d /run/systemd/system ] && [ -x "$(command -v systemctl)" ]'
-
-    - [
-        '[ -L ~/.ssh/config ] && rm ~/.ssh/config; mkdir -p ~/.ssh && touch ~/.ssh/config && grep -q "Include $(pwd)/ssh/config" ~/.ssh/config || echo "Include $(pwd)/ssh/config" >> ~/.ssh/config',
-        Configuring SSH (Include),
-      ]
-
     # Tmux plugin manager (TPM) and plugins
     -
       command: '[ -d ~/.tmux/plugins/tpm ] || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'
