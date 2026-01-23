@@ -1,0 +1,14 @@
+[Unit]
+Description=JupyterLab (global, uv-managed)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/jupyter
+ExecStart=%h/jupyter/.venv/bin/jupyter lab
+Restart=always
+RestartSec=5
+Environment=PATH=%h/jupyter/.venv/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,22 @@
+[Unit]
+Description=RClone Google Drive Mount
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+# Replace 'gdrive:' with your remote name.
+# Replace '/home/p/gdrive' with your actual mount path.
+ExecStart=/usr/local/bin/rclone mount gdrive: %h/gdrive \
+    --config=%h/.config/rclone/rclone.conf \
+    --vfs-cache-mode full \
+    --vfs-cache-max-size 10G \
+    --vfs-cache-max-age 24h \
+    --buffer-size 32M
+ExecStop=/usr/bin/fusermount -u %h/gdrive
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target
+
