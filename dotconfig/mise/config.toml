@@ -3,7 +3,7 @@ amp = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
 cmake = "latest"
 gcloud = "latest"
-gemini-cli = "latest"
+gemini = "latest"
 go = "latest"
 make = "latest"
 node = "latest"
