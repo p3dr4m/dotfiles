@@ -12,8 +12,8 @@ My personal dotfiles managed with [Dotbot](https://github.com/anishathalye/dotbo
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/dotfiles.git ~/Projects/Dotfiles
-   cd ~/Projects/Dotfiles
+   git clone https://github.com/yourusername/dotfiles.git ~/projects/dotfiles
+   cd ~/projects/dotfiles
    ```
 
 2. Run the installation script:

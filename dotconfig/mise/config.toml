@@ -1,6 +1,7 @@
 [tools]
 amp = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
+aws-nuke = "latest"
 cmake = "latest"
 gcloud = "latest"
 gemini = "latest"

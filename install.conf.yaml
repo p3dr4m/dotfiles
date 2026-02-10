@@ -30,7 +30,7 @@
     ~/.editorconfig: .editorconfig
 
 - create:
-    - ~/Projects
+    - ~/projects
 
 - shell:
     - [
