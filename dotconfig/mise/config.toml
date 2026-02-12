@@ -18,6 +18,7 @@ python = "latest"
 rust = "stable"
 terraform = "latest"
 uv = "latest"
+yq = "latest"
 
 [env]
 _.path = ['{{config_root}}/node_modules/.bin']
