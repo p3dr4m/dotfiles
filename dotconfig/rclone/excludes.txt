@@ -9,3 +9,50 @@ __pycache__/
 *.pem
 tags
 dump.rdb
+
+# user added
+.terraform/
+*.db
+
+# Build Artifacts
+dist/
+build/
+out/
+target/
+bin/
+pkg/
+
+# Framework Specific
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.turbo/
+.serverless/
+.docusaurus/
+storybook-static/
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# IDE & Editor
+.idea/
+.vscode/extensions/
+*.swp
+*.swo
+*.swn
+.history/
+
+# OS & Temp
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+*.bak
+*.old

@@ -31,15 +31,21 @@
 
     # Rclone
     ~/.config/rclone: dotconfig/rclone
-    ~/.config/sync-projects: dotconfig/sync-projects
+
 
     # Binaries
     ~/.local/bin/sync-projects: bin/sync-projects
 
 - create:
     - ~/projects
+    - ~/.config/sync-projects
+
 
 - shell:
+    - [
+        "cp -n dotconfig/sync-projects/env ~/.config/sync-projects/env || true",
+        Installing sync-projects env,
+      ]
     - [
         git submodule update --init --recursive --progress,
         Installing submodules,
