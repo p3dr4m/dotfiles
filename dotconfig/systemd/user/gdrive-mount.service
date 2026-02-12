@@ -5,18 +5,21 @@ Wants=network-online.target
 
 [Service]
 Type=notify
-# Replace 'gdrive:' with your remote name.
-# Replace '/home/p/gdrive' with your actual mount path.
 ExecStart=/usr/local/bin/rclone mount gdrive: %h/gdrive \
     --config=%h/.config/rclone/rclone.conf \
     --vfs-cache-mode full \
     --vfs-cache-max-size 10G \
     --vfs-cache-max-age 24h \
-    --buffer-size 32M
+    --buffer-size 64M \
+    --dir-cache-time 1000h \
+    --poll-interval 15s \
+    --attr-timeout 1000h \
+    --vfs-read-chunk-size 128M \
+    --vfs-read-ahead 256M \
+    --drive-skip-gdocs
 ExecStop=/usr/bin/fusermount -u %h/gdrive
 Restart=always
 RestartSec=10
 
 [Install]
 WantedBy=default.target
-

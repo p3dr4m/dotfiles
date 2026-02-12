@@ -13,6 +13,8 @@ dump.rdb
 # user added
 .terraform/
 *.db
+**/generated/client/*
+**/liboqs/*
 
 # Build Artifacts
 dist/
