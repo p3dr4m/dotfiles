@@ -1,0 +1,17 @@
+# Configuration for sync-projects
+# Define the local and cloud directories to sync.
+# The CLOUD_DIR should be the path to your cloud drive mount (e.g. Google Drive app or rclone mount).
+
+LOCAL_DIR="$HOME/projects"
+
+# macOS Example:
+# CLOUD_DIR="$HOME/Library/CloudStorage/GoogleDrive-youremail@example.com/My Drive/projects"
+
+# Linux Example:
+# CLOUD_DIR="$HOME/gdrive/projects"
+
+# Windows (if using WSL or Cygwin):
+# CLOUD_DIR="/mnt/g/My Drive/projects"
+
+# Please uncomment and set CLOUD_DIR correctly.
+# CLOUD_DIR=""
