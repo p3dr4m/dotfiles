@@ -7,39 +7,31 @@
 - clean: ["~"]
 
 - link:
-    # Shell
+    # dotfiles
     ~/.zshenv: .zshenv
     ~/.bashrc: .bashrc
-
-    # XDG Config
+    ~/.editorconfig: .editorconfig
+    ~/.zshrc: dotconfig/zsh/.zshrc
+    ~/.vimrc: dotconfig/vim/vimrc
+    # dotlocal
+    ~/.local/bin/sync-projects: bin/sync-projects
+    # dotconfig
     ~/.config/uv: dotconfig/uv
     ~/.config/zsh: dotconfig/zsh
-    ~/.zshrc: dotconfig/zsh/.zshrc
     ~/.config/mise: dotconfig/mise
     ~/.config/tmux: dotconfig/tmux
     ~/.config/git: dotconfig/git
     ~/.config/vim: dotconfig/vim
-    ~/.vimrc: dotconfig/vim/vimrc
     ~/.config/starship.toml: dotconfig/starship.toml
     ~/.config/systemd:
       path: dotconfig/systemd
       force: true
     ~/.config/environment.d: dotconfig/environment.d
-
-    # Reverse Recursive Lookup
-    ~/.editorconfig: .editorconfig
-
-    # Rclone
-    ~/.config/rclone: dotconfig/rclone
-
-
-    # Binaries
-    ~/.local/bin/sync-projects: bin/sync-projects
+    ~/.config/rclone/excludes.txt: dotconfig/rclone/excludes.txt
 
 - create:
     - ~/projects
     - ~/.config/sync-projects
-
 
 - shell:
     - [
