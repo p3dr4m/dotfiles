@@ -29,6 +29,13 @@
     # Reverse Recursive Lookup
     ~/.editorconfig: .editorconfig
 
+    # Rclone
+    ~/.config/rclone: dotconfig/rclone
+    ~/.config/sync-projects: dotconfig/sync-projects
+
+    # Binaries
+    ~/.local/bin/sync-projects: bin/sync-projects
+
 - create:
     - ~/projects
 
