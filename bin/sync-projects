@@ -3,6 +3,7 @@ set -e
 
 CONFIG_FILE="$HOME/.config/sync-projects/env"
 EXCLUDES_FILE="$HOME/.config/rclone/excludes.txt"
+START_TIME=$(date +%s)
 
 # Check if config exists
 if [ ! -f "$CONFIG_FILE" ]; then
@@ -30,6 +31,7 @@ fi
 
 if [ ! -d "$CLOUD_DIR" ]; then
     echo "Error: CLOUD_DIR '$CLOUD_DIR' does not exist."
+    echo "Check if your drive is mounted."
     exit 1
 fi
 
@@ -41,8 +43,7 @@ fi
 # Construct rclone command
 CMD=(rclone bisync "$LOCAL_DIR" "$CLOUD_DIR")
 CMD+=(--create-empty-src-dirs)
-CMD+=(--compare size,modtime,checksum)
-CMD+=(--slow-hash-sync-only)
+# Default fast check (size,modtime) is implied by bisync, strict checks added conditionally below
 CMD+=(--resilient)
 CMD+=(--recover)
 CMD+=(--verbose)
@@ -51,8 +52,32 @@ if [ -f "$EXCLUDES_FILE" ]; then
     CMD+=(--exclude-from "$EXCLUDES_FILE")
 fi
 
-# Pass through any arguments (like --dry-run or --resync)
-CMD+=("$@")
+# Parse arguments for integrity flag
+args=()
+integrity_mode=false
+for arg in "$@"; do
+    if [ "$arg" == "--integrity" ]; then
+        integrity_mode=true
+    else
+        args+=("$arg")
+    fi
+done
+
+if [ "$integrity_mode" = true ]; then
+    echo "🔒 Integrity Mode Enabled: Performing full checksum verification (Slow)..."
+    CMD+=(--compare size,modtime,checksum)
+    CMD+=(--slow-hash-sync-only)
+else
+    echo "⚡ Speed Mode: Checking size and modtime only (Fast)..."
+    # rclone bisync default is size,modtime
+fi
+
+# Pass through other arguments
+CMD+=("${args[@]}")
 
 echo "Syncing '$LOCAL_DIR' <-> '$CLOUD_DIR'..."
 "${CMD[@]}"
+
+END_TIME=$(date +%s)
+DURATION=$((END_TIME - START_TIME))
+echo "✅ Sync completed in ${DURATION}s"
