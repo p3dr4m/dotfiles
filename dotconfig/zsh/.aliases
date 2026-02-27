@@ -43,3 +43,19 @@ alias python="python3"
 alias pari="/usr/bin/gp"
 alias bootwin="~/Desktop/reboot-windows.sh"
 alias zsync="source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh && antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt"
+
+# Smart SSH: Bootstraps dotfiles on new VPS
+ssh() {
+  # Only try to bootstrap if no flags are passed and only one argument (host)
+  if [[ "$#" -eq 1 && "$1" != -* ]]; then
+    local host="$1"
+    # Try to check if dotfiles directory exists on the remote
+    if ! command ssh -q -o ConnectTimeout=5 "$host" "[ -d ~/dotfiles ]" 2>/dev/null; then
+      echo "🚀 Fresh VPS detected! Bootstrapping dotfiles..."
+      # Stream the bootstrap script to the remote and execute with bash
+      command ssh -t "$host" "curl -fsSL https://raw.githubusercontent.com/p3dr4m/dotfiles/main/bin/bootstrap -o /tmp/bootstrap_dotfiles.sh && bash /tmp/bootstrap_dotfiles.sh && rm /tmp/bootstrap_dotfiles.sh"
+    fi
+  fi
+  # Perform normal ssh login
+  command ssh "$@"
+}

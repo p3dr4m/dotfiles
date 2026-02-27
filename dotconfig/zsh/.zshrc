@@ -69,3 +69,12 @@ fi
 eval "$(keychain --eval -q pedram)"
 
 #zprof
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+# Automatically start/attach to tmux 'scratch' session on SSH login
+if [[ -n "$SSH_CONNECTION" || -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+  if [[ -z "$TMUX" && -z "$TMUX_PANE" && -n "$PS1" ]]; then
+    exec tmux new-session -A -s scratch
+  fi
+fi
