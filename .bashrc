@@ -132,3 +132,8 @@ export COMPOSE_BAKE=true
 eval "$(mise activate bash)"
 eval "$(starship init bash)"
 eval "$(keychain --eval pedram)"
+
+# Load local machine-specific configurations (not tracked by git)
+if [ -f ~/.bashrc.local ]; then
+    . ~/.bashrc.local
+fi

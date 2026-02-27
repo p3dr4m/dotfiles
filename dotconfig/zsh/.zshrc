@@ -78,3 +78,8 @@ if [[ -n "$SSH_CONNECTION" || -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
     exec tmux new-session -A -s scratch
   fi
 fi
+
+# Load local machine-specific configurations (not tracked by git)
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
