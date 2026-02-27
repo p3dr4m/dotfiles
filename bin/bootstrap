@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -e
+
+# --- Configuration ---
+REPO_URL="https://github.com/p3dr4m/dotfiles.git"
+DOTFILES_DIR="$HOME/dotfiles"
+
+echo "🚀 Starting VPS Bootstrap..."
+
+# 1. Detect OS and install basic dependencies
+if [ -f /etc/debian_version ]; then
+    echo "📦 Detected Debian/Ubuntu, installing packages..."
+    sudo apt-get update
+    sudo apt-get install -y zsh tmux git curl keychain
+elif [ -f /etc/redhat-release ]; then
+    echo "📦 Detected RHEL/Fedora/CentOS, installing packages..."
+    sudo dnf install -y zsh tmux git curl keychain
+fi
+
+# 2. Clone dotfiles if not already there
+if [ ! -d "$DOTFILES_DIR" ]; then
+    echo "📂 Cloning dotfiles repo..."
+    git clone --recursive "$REPO_URL" "$DOTFILES_DIR"
+else
+    echo "✅ Dotfiles directory already exists."
+    cd "$DOTFILES_DIR" && git pull && git submodule update --init --recursive
+fi
+
+# 3. Run dotbot installer
+echo "🛠️  Running dotbot installer..."
+cd "$DOTFILES_DIR"
+./install
+
+# 4. Change default shell to zsh (if not already)
+if [[ "$SHELL" != *"zsh"* ]]; then
+    echo "🐚 Changing default shell to zsh..."
+    sudo chsh -s "$(which zsh)" "$USER"
+fi
+
+echo "✨ Bootstrap complete! Re-log or run 'zsh' to enter your new environment."
