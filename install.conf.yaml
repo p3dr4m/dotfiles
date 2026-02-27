@@ -44,10 +44,10 @@
       ]
 
     - [
-        command -v starship || curl -fsSL https://starship.rs/install.sh | sh -s -- -y -f,
+        command -v starship || { curl -fsSL https://starship.rs/install.sh -o /tmp/starship_install.sh && sh /tmp/starship_install.sh -y -f && rm /tmp/starship_install.sh; },
         Installing Starship,
       ]
-    - [command -v mise || curl https://mise.run | sh, Installing mise]
+    - [command -v mise || { curl -fsSL https://mise.run -o /tmp/mise_install.sh && sh /tmp/mise_install.sh && rm /tmp/mise_install.sh; }, Installing mise]
     -
       command: 'mise doctor || true'
       description: Validating mise setup
