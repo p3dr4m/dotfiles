@@ -66,10 +66,6 @@ if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
 fi
 
-#eval "$(keychain --eval -q pedram)"
-
-#zprof
-
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 # Automatically start/attach to tmux 'scratch' session on SSH login
