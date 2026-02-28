@@ -71,7 +71,15 @@ fpath+=~/.zfunc; autoload -Uz compinit; compinit
 # Automatically start/attach to tmux 'scratch' session on SSH login
 if [[ -n "$SSH_CONNECTION" || -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
   if [[ -z "$TMUX" && -z "$TMUX_PANE" && -n "$PS1" ]]; then
-    exec tmux new-session -A -s scratch
+    # This command tries common MOTD locations across different distros
+    WELCOME_CMD='
+      if [ -f /var/run/motd.dynamic ]; then cat /var/run/motd.dynamic;
+      elif [ -f /etc/motd ]; then cat /etc/motd;
+      elif [ -f /etc/issue ]; then cat /etc/issue;
+      fi;
+      exec $SHELL'
+    # Launch or attach to tmux and run welcome command
+    exec tmux new-session -A -s scratch "$WELCOME_CMD"
   fi
 fi
 

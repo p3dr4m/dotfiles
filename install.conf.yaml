@@ -13,6 +13,7 @@
     ~/.editorconfig: .editorconfig
     ~/.zshrc: dotconfig/zsh/.zshrc
     ~/.vimrc: dotconfig/vim/vimrc
+    ~/.hushlogin: .hushlogin
     # dotlocal
     ~/.local/bin/sync-projects: bin/sync-projects
     # dotconfig
