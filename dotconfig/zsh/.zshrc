@@ -87,3 +87,6 @@ fi
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
+
+# OpenClaw Completion
+source "/home/openclaw/.openclaw/completions/openclaw.zsh"
